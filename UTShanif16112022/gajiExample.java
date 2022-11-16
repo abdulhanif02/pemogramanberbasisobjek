@@ -3,27 +3,50 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UTShanif16112022;
+package UTSHanif16112022;
 
 /**
  *
- * @author Windows 10
+ * @author Windows10
  */
-public class gajiExample {
- public static void main(String[] args){
-        gaji gaji1 = new gaji();
-        gaji1.setName("Ali");
-        gaji1.setSlip("12ED");
-        gaji1.setGolongan(1);
-        gaji1.setTa(250000);
-        gaji1.setTi(500000);
+public class GajiExample {
+    public static void main(String[] args){
+        GajiRecord pegawai1=new GajiRecord();
         
-        System.out.println("Nama            :"+gaji1.getName());
-        System.out.println("Kode Slip       :"+gaji1.getSlip());
-        System.out.println("Golongan        :"+gaji1.getGolongan());
-        System.out.println("Tunjangan Anak  :"+gaji1.getTa());
-        System.out.println("Tunjangan Istri :"+gaji1.getTi());
-        System.out.println("Total           :"+gaji1.getTotal());
-     
+        pegawai1.setKode("095");
+        pegawai1.setTgl("14 Des 2022");
+        pegawai1.setNama("Dimas");
+        pegawai1.setGol(1);
+        pegawai1.setTunjanganAnak(250000);
+        pegawai1.setTunjanganIstri(500000);
+        
+        System.out.println("Kode Slip : "+pegawai1.getKode());
+        System.out.println("Tanggal : "+pegawai1.getTgl());
+        System.out.println("Nama : "+pegawai1.getNama());
+        System.out.println("Golongan : "+pegawai1.getGol());
+        System.out.println("Gaji Pokok : "+pegawai1.getGaji());
+        System.out.println("Tunjangan Anak : "+pegawai1.getTunjanganAnak());
+        System.out.println("Tunjangan Istri : "+pegawai1.getTunjanganIstri());
+        System.out.println("Total Gaji : "+pegawai1.getTotal());
+        
+        GajiRecord pegawai2=new GajiRecord();
+        
+        pegawai2.setKode("019");
+        pegawai2.setTgl("15 Jan 2022");
+        pegawai2.setNama("Zaki");
+        pegawai2.setGol(2);
+        pegawai2.setTunjanganAnak(500000);
+        pegawai2.setTunjanganIstri(750000);
+        
+        System.out.print("\n");
+        System.out.println("Kode Slip : "+pegawai2.getKode());
+        System.out.println("Tanggal : "+pegawai2.getTgl());
+        System.out.println("Nama : "+pegawai2.getNama());
+        System.out.println("Golongan : "+pegawai2.getGol());
+        System.out.println("Gaji Pokok : "+pegawai2.getGaji());
+        System.out.println("Tunjangan Anak : "+pegawai2.getTunjanganAnak());
+        System.out.println("Tunjangan Istri : "+pegawai2.getTunjanganIstri());
+        System.out.println("Total Gaji : "+pegawai2.getTotal());
+        
     }
 }
