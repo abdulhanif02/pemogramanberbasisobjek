@@ -9,77 +9,81 @@ package UTShanif16112022;
  *
  * @author Windows 10
  */
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.IOException;
-
 public class gaji {
-    public static void main(String [] args){
-        int ta = 0,ti = 0,total;
-        int golongan = 0;
-        BufferedReader dataIn = new BufferedReader (new
-        InputStreamReader(System.in));
-        String nama="";
-        String slip="";
-        System.out.print("Masukan Kode Slip :");
-        try{
-            slip =dataIn.readLine();
-            }catch (IOException e) {
-            System.out.println("Error!");
-            }
-        System.out.print("Masukan Nama :");
-        try{
-            nama =dataIn.readLine();
-            }catch (IOException e) {
-            System.out.println("Error!");
-            }
-        System.out.print("Masukan Golongan : ");
-        try{
-            golongan =Integer.parseInt(dataIn.readLine());
-            }catch (IOException e) {
-            System.out.println("Error!");
+    private String name;
+    private String slip;
+    private String golongan;
+    private double pokok;
+    private double ta;
+    private double ti;
+    private double total;
+    private static int gajii;
+    
+    public gaji(String temp) {
+        gajii++;
+        this.name = temp;
+    }
+
+    public gaji(String name, String slip, String golongan) {
+        gajii++;
+        this.name = name;
+        this.slip = slip;
+        this.golongan = golongan;
+    }
+
+    public gaji(double tanak, double tistri) {
+         tanak = ta;
+         tistri = ti;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public String getSlip() {
+        return slip;
+    }
+    public void setSlip(String slip) {
+        this.slip = slip;
+    }
+    
+    public String getGolongan() {
+        return golongan;
+    }
+    public void setGolongan(String golongan) {
+        this.golongan = golongan;
+    }
+    
+    public double getTa() {
+        return ta;
+    }
+    public void setTa(double ta) {
+        this.ta = ta;
+    }
+    
+    public double getTi() {
+        return ti;
+    }
+    public void setTi(double ti) {
+        this.ti= ti;
+    }
+    public double getTotal() {
+        if ("1".equals(golongan)){
+            pokok=1000000;
+            total = (pokok + ta + ti);
+            return total;
         }
-        if(golongan == 1)
-        {
-            System.out.println("Anda Golongan 1");
-            int pokok=1000000;
-            System.out.print("Masukan Tunjangan Anak : ");
-            try{
-                ta =Integer.parseInt(dataIn.readLine());
-                }catch (IOException e) {
-                System.out.println("Error!");
-            }
-            System.out.print("Masukan Tunjangan Istri : ");
-            try{
-                ti =Integer.parseInt(dataIn.readLine());
-                }catch (IOException e) {
-                System.out.println("Error!");
-            }
-            total=pokok+ta+ti;
-            System.out.println("Total Gaji : " +total);
+        else if ("2".equals(golongan)){
+            pokok=2000000;
+            total = (pokok + ta + ti);
+            return total;
         }
-        else if(golongan == 2)
-        {
-            System.out.println("Anda Golongan 2");
-            int pokok=2000000;
-            System.out.print("Masukan Tunjangan Anak : ");
-            try{
-                ta =Integer.parseInt(dataIn.readLine());
-                }catch (IOException e) {
-                System.out.println("Error!");
-            }
-            System.out.print("Masukan Tunjangan Istri : ");
-            try{
-                ti =Integer.parseInt(dataIn.readLine());
-                }catch (IOException e) {
-                System.out.println("Error!");
-            }
-            total=pokok+ta+ti;
-            System.out.println("Total Gaji : " +total);
-        }
-        else
-        {
-            System.out.println("Golongan anda tidak valid");
-        }
+        return total;
+    }
+    public static int getGajii() {
+        return gajii;
     }
 }
